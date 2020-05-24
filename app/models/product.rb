@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  belongs_to :Page
+  belongs_to :section
 end

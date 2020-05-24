@@ -1,3 +1,4 @@
 class Menu < ApplicationRecord
-  has_many :ingredients
+  belongs_to :admin_user
+  has_many :sections
 end

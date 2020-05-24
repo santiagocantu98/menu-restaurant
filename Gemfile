@@ -21,6 +21,8 @@ gem 'puma', '~> 4.1'
 
 #active-admin theme
 gem 'arctic_admin'
+#serializers to render json
+gem 'active_model_serializers', '~> 0.10.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -49,6 +51,8 @@ end
 # ActiveAdmin
 gem 'devise'
 gem 'activeadmin'
+
+gem 'cancancan'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

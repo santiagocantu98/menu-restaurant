@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_125350) do
+ActiveRecord::Schema.define(version: 2020_05_24_034149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,47 @@ ActiveRecord::Schema.define(version: 2020_05_11_125350) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "role"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.bigint "admin_user_id", null: false
+    t.string "title"
+    t.string "description"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_user_id"], name: "index_menus_on_admin_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "price"
+    t.decimal "rating"
+    t.string "image_url"
+    t.string "video_url"
+    t.bigint "section_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "posicion"
+    t.index ["section_id"], name: "index_products_on_section_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "menu_id", null: false
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "pagina"
+    t.index ["menu_id"], name: "index_sections_on_menu_id"
+  end
+
+  add_foreign_key "menus", "admin_users"
+  add_foreign_key "products", "sections"
+  add_foreign_key "sections", "menus"
 end

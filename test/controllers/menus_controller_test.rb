@@ -12,7 +12,7 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
 
   test "should create menu" do
     assert_difference('Menu.count') do
-      post menus_url, params: { menu: { AdminUser_id: @menu.AdminUser_id, description: @menu.description, image_url: @menu.image_url, title: @menu.title } }, as: :json
+      post menus_url, params: { menu: { admin_user_id: @menu.admin_user_id, description: @menu.description, image_url: @menu.image_url, title: @menu.title } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update menu" do
-    patch menu_url(@menu), params: { menu: { AdminUser_id: @menu.AdminUser_id, description: @menu.description, image_url: @menu.image_url, title: @menu.title } }, as: :json
+    patch menu_url(@menu), params: { menu: { admin_user_id: @menu.admin_user_id, description: @menu.description, image_url: @menu.image_url, title: @menu.title } }, as: :json
     assert_response 200
   end
 
