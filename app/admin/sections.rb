@@ -1,5 +1,15 @@
 ActiveAdmin.register Section do
-  permit_params :title, :description, :image_url, :menu_id, :pagina
+  permit_params :title, :description, :menu_id, :page_number
+
+  form do |f|
+    f.inputs do
+      f.input :menu, collection: current_admin_user.menus, :allow_blank => false
+      f.input :title
+      f.input :description
+      f.input :page_number
+    end
+    f.actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -15,5 +25,5 @@ ActiveAdmin.register Section do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

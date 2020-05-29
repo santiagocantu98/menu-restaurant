@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu: one
+  waiter: one
+  rating: 9.99
+  comment: MyString
+  email: MyString
+
+two:
+  menu: two
+  waiter: two
+  rating: 9.99
+  comment: MyString
+  email: MyString

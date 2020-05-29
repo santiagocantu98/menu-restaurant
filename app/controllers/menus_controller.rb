@@ -9,7 +9,7 @@ class MenusController < ApplicationController
 
   # GET /menus/1
   def show
-    render json: @menu, include: ['sections.products']
+    render json: @menu, include: ['sections.products.media_files', 'waiters.califications', 'products.media_files']
   end
 
   # POST /menus
@@ -45,6 +45,6 @@ class MenusController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def menu_params
-      params.require(:menu).permit(:admin_user_id, :title, :description, :image_url, sections_attributes: [])
+      params.require(:menu).permit(:title, :description, :menu_color, :text_color, :rating_color, :admin_user_id)
     end
 end

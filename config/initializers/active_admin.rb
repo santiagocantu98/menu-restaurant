@@ -93,6 +93,8 @@ ActiveAdmin.setup do |config|
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
 
+  config.register_javascript 'https://www.google.com/jsapi'
+
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These

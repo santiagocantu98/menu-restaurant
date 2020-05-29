@@ -41,6 +41,18 @@ class Ability
 
         can :create, Product
         can [:read, :update, :destroy], Product, section: { menu: { admin_user: { id: user.id }}}
+
+        can :create, Waiter
+        can [:read, :update, :destroy], Waiter, menu: { admin_user: { id: user.id }}
+
+        can :create, MediaFile
+        can [:read, :update, :destroy], MediaFile, product: { section: { menu: { admin_user: { id: user.id }}}}
+
+
+        can :read, Suggestion, menu: { admin_user: { id: user.id }}
+
+        can :read, Calification, menu: { admin_user: { id: user.id }}
+
     end
   end
 end

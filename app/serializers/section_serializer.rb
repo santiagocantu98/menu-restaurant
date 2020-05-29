@@ -1,5 +1,5 @@
 class SectionSerializer < ActiveModel::Serializer
-  attributes :title, :description, :image_url, :menu_id, :pagina
+  attributes :title, :description, :menu_id, :page_number
 
   belongs_to :menu
   has_many :products

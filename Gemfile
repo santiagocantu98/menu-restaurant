@@ -21,9 +21,11 @@ gem 'puma', '~> 4.1'
 
 #active-admin theme
 gem 'arctic_admin'
+gem 'rack-cors'
 #serializers to render json
 gem 'active_model_serializers', '~> 0.10.0'
-
+# graphs
+gem 'chartkick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

@@ -1,7 +1,8 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :name, :description, :price, :rating, :image_url, :video_url, :section_id, :posicion
+  attributes :name, :description, :price, :rating, :section_id, :position
 
   belongs_to :section
+  has_many :media_files
 
 
 end
